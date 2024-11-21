@@ -1,0 +1,69 @@
+name: app_livros
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.4
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+  flutter_lints: ^4.0.0
+
+
+flutter:
+  uses-material-design: true
+
+  assets:
+  - images/Camilla.jpg
+  - images/inicio.jpg
+  
+  - images/mais/strorytelling.png
+  - images/mais/aperte o f... .png
+  - images/mais/tinha que ser você.png  
+  - images/mais/mais1.png
+  - images/mais/mais2.png
+  - images/mais/mais3.png
+  - images/mais/mais4.png
+  - images/mais/mais5.png
+  - images/mais/mais6.png
+
+  - images/exclusivos/a outra tribo.png  
+  - images/exclusivos/you wn or you die.png
+  - images/exclusivos/alta performance.png
+  - images/exclusivos/1.png
+  - images/exclusivos/2.png
+  - images/exclusivos/3.png
+  - images/exclusivos/4.png
+  - images/exclusivos/5.png
+  - images/exclusivos/6.png
+  - images/exclusivos/7.png
+  - images/exclusivos/8.png
+  - images/exclusivos/9.png
+  
+  - images/classicos/a morte de ivan ilitch.png
+  - images/classicos/dracula.png
+  - images/classicos/machado macabro.png
+  - images/classicos/1.png
+  - images/classicos/2.png
+  - images/classicos/3.png
+  - images/classicos/4.png
+  - images/classicos/5.png
+  - images/classicos/6.png
+  - images/classicos/7.png
+  - images/classicos/8.png
+  - images/classicos/9.png
+
+
+
