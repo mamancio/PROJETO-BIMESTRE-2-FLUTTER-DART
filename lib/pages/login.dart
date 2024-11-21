@@ -1,64 +1,163 @@
 import 'package:flutter/material.dart';
 import 'homePages.dart';
 
-class Login extends StatelessWidget {
-  final TextEditingController _usernameController = TextEditingController();
+class Login extends StatefulWidget {
+  Login({Key? key}) : super(key: key);
+
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<Login> {
+  final formKey = GlobalKey<FormState>();
+  final email = TextEditingController();
+  final senha = TextEditingController();
+
+  bool isLogin = true;
+  late String titulo;
+  late String actionButton;
+  late String toggleButton;
+  bool loading = false;
+
+  @override
+  void initState() {
+    super.initState();
+    setFormAction(true);
+  }
+
+  setFormAction(bool acao) {
+    setState(() {
+      isLogin = acao;
+      if (isLogin) {
+        titulo = 'Bem vindo';
+        actionButton = 'Login';
+        toggleButton = 'Ainda não tem conta? Cadastre-se agora.';
+      } else {
+        titulo = 'Crie sua conta';
+        actionButton = 'Cadastrar';
+        toggleButton = 'Voltar ao Login.';
+      }
+    });
+  }
+
+  login() {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+          builder: (context) => HomePage(
+                username: '',
+              )),
+    );
+  }
+
+  registrar() async {}
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // Campo de texto para nome de usuário
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: TextField(
-                controller: _usernameController,
-                decoration: InputDecoration(
-                  labelText: 'Digite seu nome',
-                  labelStyle: TextStyle(color: Colors.black),
-                  border: OutlineInputBorder(),
-                  filled: true,
-                  fillColor: Colors.grey[200],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.only(top: 100),
+          child: Form(
+            key: formKey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  titulo,
+                  style: TextStyle(
+                    fontSize: 35,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: -1.5,
+                  ),
                 ),
-              ),
-            ),
-            SizedBox(height: 16),
-            // Botão de login
-            ElevatedButton(
-              onPressed: () {
-                final username = _usernameController.text.trim();
-                if (username.isNotEmpty) {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => HomePage(username: username),
+                Padding(
+                  padding: EdgeInsets.all(24),
+                  child: TextFormField(
+                    controller: email,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Email',
                     ),
-                  );
-                }
-              },
-              child: Text('Entrar'),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.orange,
-                padding: EdgeInsets.symmetric(vertical: 16, horizontal: 32),
-                textStyle: TextStyle(fontSize: 18),
-              ),
+                    keyboardType: TextInputType.emailAddress,
+
+                    // Remova ou comente a validação temporária
+                    validator: (value) {
+                      // if (value!.isEmpty) {
+                      //   return 'Informe o email corretamente!';
+                      // }
+                      return null;
+                    },
+                  ),
+                ),
+                Padding(
+                  padding:
+                      EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                  child: TextFormField(
+                    controller: senha,
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Senha',
+                    ),
+
+                    // Remova ou comente a validação temporária
+                    validator: (value) {
+                      // if (value!.isEmpty) {
+                      //   return 'Informa sua senha!';
+                      // } else if (value.length < 6) {
+                      //   return 'Sua senha deve ter no mínimo 6 caracteres';
+                      // }
+                      return null;
+                    },
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(24.0),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      if (isLogin) {
+                        // Chama a função login que agora vai para a HomePage
+                        login();
+                      } else {
+                        registrar();
+                      }
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: (loading)
+                          ? [
+                              Padding(
+                                padding: EdgeInsets.all(16),
+                                child: SizedBox(
+                                  width: 24,
+                                  height: 24,
+                                  child: CircularProgressIndicator(
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              )
+                            ]
+                          : [
+                              Icon(Icons.check),
+                              Padding(
+                                padding: EdgeInsets.all(16.0),
+                                child: Text(
+                                  actionButton,
+                                  style: TextStyle(fontSize: 20),
+                                ),
+                              ),
+                            ],
+                    ),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () => setFormAction(!isLogin),
+                  child: Text(toggleButton),
+                ),
+              ],
             ),
-            SizedBox(height: 16),
-            // Link de "Já possui cadastro?"
-            TextButton(
-              onPressed: () {
-                // Ação para quem já possui cadastro
-              },
-              child: Text(
-                'Já possui cadastro?',
-                style: TextStyle(color: Colors.black),
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );
