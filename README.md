@@ -34,3 +34,15 @@ flutter run
 
 📝 #Contribuição
 Contribuições são bem-vindas! Sinta-se à vontade para enviar pull requests.
+
+## Equipe
+    
+| Nome | GitHub |
+
+| Matheus Mancio | [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://github.com/mamancio)|
+| Felipe Tardivo | [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://github.com/FelipeTardivo)|
+| Gabriel Araujo | [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://github.com/GabrielAraujo989)|
+| Marlon Vinicius| [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://github.com/marlon-vinicius)|
+| Bruno Vinicius | [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://github.com/bruuno1994)|
+
+<span id="equipe">
