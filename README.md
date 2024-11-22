@@ -1,16 +1,34 @@
-# app_livros
+📚 #APP BOOKS
+Este é um aplicativo de leitura de livros, desenvolvido com em Flutter.Dart e SQLite como banco de dados.
 
-A new Flutter project.
+🚀 #O APP
+O APP poderá em breve:
+Adicionar novos livros com título e sua descrição;
+Visualizar a lista de livros cadastrados;
+Editar informações;
+Excluir livros;
 
-## Getting Started
+🛠️ #Tecnologias Utilizadas
+Flutter.Dart: Framework
+SQLite: Banco
 
-This project is a starting point for a Flutter application.
+📖 #Como Executar
+Clone este repositório:
 
-A few resources to get you started if this is your first Flutter project:
+bash
+Copiar código
+git clone https://github.com/mamancio/PROJETO-BIMESTRE-2-FLUTTER-DART
+cd flutter-PROJETO-BIMESTRE-2-FLUTTER-DART
+Instale as dependências:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+bash
+Copiar código
+flutter pub get
+Execute o aplicativo:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+bash
+Copiar código
+flutter run
+
+📝 #Contribuição
+Contribuições são bem-vindas! Sinta-se à vontade para enviar pull requests.
