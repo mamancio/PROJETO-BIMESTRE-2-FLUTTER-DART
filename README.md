@@ -10,10 +10,11 @@ Editar informações;
 Excluir livros;
 
 <span id="tecnologias">
-🛠️ ##  Tecnologias Utilizadas
-Flutter.Dart: Framework
-SQLite: Banco
 
+## Ferramentas 
+
+As seguintes ferramentas, linguagens, bibliotecas e tecnologias foram usadas no projeto:
+ 
 📖 #Como Executar
 Clone este repositório:
 
