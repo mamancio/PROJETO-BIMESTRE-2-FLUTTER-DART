@@ -1,5 +1,4 @@
 import 'package:app_livros/main.dart';
-import 'package:app_livros/pages/login.dart';
 import 'package:flutter/material.dart';
 import 'book_list.dart';
 import 'favorites.dart';
@@ -52,7 +51,7 @@ class _HomePagesState extends State<HomePage> {
             fontWeight: FontWeight.bold,
           ),
         ),
-        automaticallyImplyLeading: false, // TIRAR A SETA VOLTAR
+        automaticallyImplyLeading: false,
         actions: [
           IconButton(
             icon: Icon(Icons.exit_to_app, color: Colors.red),

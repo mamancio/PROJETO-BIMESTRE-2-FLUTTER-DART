@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'homePages.dart';
-import 'favorites.dart';
-import 'profile.dart';
+//import 'homePages.dart';
+//import 'favorites.dart';
+//import 'profile.dart';
 
 class Search extends StatelessWidget {
   @override
@@ -9,6 +9,7 @@ class Search extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.black,
         elevation: 0,
         centerTitle: true,
